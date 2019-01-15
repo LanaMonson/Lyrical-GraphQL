@@ -1,3 +1,4 @@
+import './style/style.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, hashHistory, IndexRoute } from 'react-router';
@@ -12,11 +13,11 @@ const client = new ApolloClient({});
 
 const Root = () => {
   return (
-    <ApolloProvider client= {client}>
-      <Router history={hashHistory}>
-        <Route path="/" component={App}>
-          <IndexRoute component={SongList} />
-          <Route path="song/new" component={SongCreate} />
+    <ApolloProvider client= { client }>
+      <Router history={ hashHistory }>
+        <Route exact path="/" component={ App }>
+          <IndexRoute component={ SongList } />
+          <Route path="songs/new" component={ SongCreate } />
         </Route>
       </Router>
     </ApolloProvider>
